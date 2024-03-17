@@ -1,0 +1,132 @@
+a:
+  instruction: "Was ist eine Potenz?"
+  type: Verständnisfrage
+  answer: "Eine **Potenz** ist eine Kurzschreibweise, die du benutzt, wenn du eine Zahl öfter **mit sich selbst malnimmst**."
+  examples:
+    - $$\textcolor{orange}{2}^{\textcolor{teal}{5}} = \underbrace{\textcolor{orange}{2 \cdot 2 \cdot 2 \cdot 2 \cdot 2}}_{\text{\textcolor{teal}{5} mal}}$$
+b:
+  instruction: "Wie heissen die untere Zahl und die obere Zahl einer Potenz, z.B. $2^5$?"
+  type: Verständnisfrage
+  answer: "Die **untere Zahl** (hier: **2**) nennst du **Basis**. Sie kann auch ein **x** sein, zum Beispiel **x2**. Die **obere Zahl** (hier: **5**) ist der **Exponent** der Potenz."
+c:
+  instruction: "Wann muss man sich Potenzen vorstellen?"
+  type: Verständnisfrage
+  answer: "Wenn vor der Potenz keine Zahl steht, solltest du dir eine **1** vorstellen. $$x$$ ist dasselbe wie $$x^1$$. "
+d:
+  instruction: "Wann kann man Potenzen addieren?"
+  type: Verständnisfrage
+  answer: "Du kannst Potenzen *nur* addieren, wenn die *Basis* **und** der *Exponent* *gleich* sind. Du rechnest dann einfach die Zahlen **vor** der Potenz zusammen."
+  examples:
+    - $$2x^3 + 5x^3 = 7x^3$$"
+    - $$x^2 + x^2 = 2x^2$$
+    - $$8x^4 + 3x^4 = 11x^4$$
+    - $$4^2 + 4^2 = 2 * 4^2 = 2 * 16 = 32$$
+e:
+  instruction: Rechne aus"
+  type: Übung
+  math: $$3y^2 + 4y^5$$
+f:
+  instruction: Rechne aus
+  type: Übung
+  math: $$8x^4 + 2x^4$$
+g:
+  instruction: Rechne aus
+  type: Übung
+  math: $$2a^4 + 2a^4$$
+h:
+  instruction: Rechne aus
+  type: Übung
+  math: $$4^3 + 6^3$$
+i:
+  type: Übung
+  instruction: Rechne aus
+  math: $$x^3 + a^3$$
+j:
+  type: Übung
+  instruction: Rechne aus
+  math: $$3b^4 + 5x^4$$
+k:
+  type: Übung
+  instruction: Rechne aus
+  math: $$3^2 + 3^6$$
+l:
+  type: Übung
+  instruction: Rechne aus
+  math: $$x^4 + x^7$$
+n:
+  type: Übung
+  instruction: Rechne aus
+  math: $$a^1 + a^2$$
+o:
+  type: Übung
+  instruction: Rechne aus
+  math: $$4^2 + 5^6$$
+p:
+  type: Übung
+  instruction: Rechne aus
+  math: $$x^3 + b^6$$
+q:
+  type: Übung
+  instruction: Rechne aus
+  math: $$a^8 + b^2$$
+# ex13:
+r:
+  type: Übung
+  instruction: Rechne aus
+  math: $$a^n * a^m$$
+s:
+  type: Übung
+  instruction: Rechne aus
+  math: $$\frac{a^n}{a^m}$$
+t:
+  type: Übung
+  instruction: Rechne aus
+  math: $$({a^4})^3$$
+u:
+  type: Übung
+  instruction: Rechne aus
+  math: $$(a^n)^m= a^{n·m}$$
+v:
+  type: Übung
+  instruction: Rechne aus
+  math: $$a^n*b^n= (a*b)^n$$
+w:
+  type: Übung
+  instruction: Rechne aus
+  math: $$\frac{a^n}{a^m}$$
+x:
+  type: Übung
+  instruction: Rechne aus
+  math: $$3^4 * 5^4$$
+y:
+  type: Übung
+  instruction: Rechne aus
+  math: $$a^4 * b^4$$
+z:
+  type: Übung
+  instruction: Rechne aus
+  math: $$x^4 * y^4$$
+aa:
+  type: Übung
+  instruction: Rechne aus
+  math: $$6^4:3^4$$
+ab:
+  type: Übung
+  instruction: Rechne aus
+  math: $$\frac{6^4}{2^4}$$
+ac:
+  type: Übung
+  instruction: Rechne aus
+  math: $$a^0 + b^1$$
+ad:
+  type: Übung
+  instruction: Rechne aus
+  math: $$b^1 + 7^0$$
+ae:
+  type: Übung
+  instruction: Schreibe folgenden Term anders
+  math: $$b^{-3}$$
+af:
+  type: Übung
+  instruction: Schreibe folgenden Term anders
+  math: $$7x^{3}$$

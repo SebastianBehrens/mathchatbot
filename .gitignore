@@ -1,0 +1,6 @@
+.venv/**
+.vscode/**
+logs/**
+material/**
+configs/valid/testing.yaml
+scripts/__pycache__/**

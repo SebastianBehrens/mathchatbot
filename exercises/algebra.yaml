@@ -1,0 +1,13 @@
+ex1:
+  instruction: Faktorisiere
+  hinweis1: "Tipp: Überlege wann man faktorisieren kann."
+  hinweis2: "Man kann gleiche Faktoren in den Summanden einer Summe faktorisieren. Faktorisiere also $a$."
+  math: "$$a^2+a$$"
+ex2:
+  anweisung: b
+  hinweis: c
+  math: d
+    type = "Algebra"
+    topic = "Potenzregeln"
+    instruction = "Anweisung"
+    math = 

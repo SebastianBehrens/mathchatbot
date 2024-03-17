@@ -1,0 +1,106 @@
+exponents:
+  level1: 
+    instruction: Rechne aus
+    type: Übung
+    math: $$x^a S1 y^a$$
+    randomize:
+      - x, y, a
+  level2: 
+    instruction: Rechne aus
+    type: Übung
+    math: $$mx^b S1 ny^c$$
+    randomize:
+      - x, y, m, n
+fractions:
+  level1: 
+    instruction: Rechne aus
+    type: Übung
+    math: $$\frac{l}{m} SS \frac{n}{o}$$
+    randomize:
+      - l, m, n, o
+  level2: 
+    instruction: Rechne aus
+    type: Übung
+    math: $$l SS \frac{l}{m}$$
+    randomize:
+      - l, m
+  level3: 
+    instruction: Rechne aus
+    type: Übung
+    math: $$l SS \frac{m + n}{o}$$
+    randomize:
+      - l, m, n, o
+  level4: 
+    instruction: Kürze
+    type: Übung
+    math: $$\frac{l + m}{m}$$
+    randomize:
+      - l, m
+  level5: 
+    instruction: Kürze
+    type: Übung
+    math: $$\frac{l * m}{n}$$
+    randomize:
+      - l, m, n
+  level6: 
+    instruction: Kürze
+    type: Übung
+    math: $$\frac{l * m}{n}$$
+    randomize:
+      - l, m, n
+roots:
+  level1: 
+    instruction: Schreibe anders
+    type: Übung
+    math: $$\sqrt{a}$$
+    randomize:
+      - a
+  level2: 
+    instruction: Schreibe anders
+    type: Übung
+    math: $$\sqrt{a}^b$$
+    randomize:
+      - a, b
+  level3: 
+    instruction: Schreibe anders
+    type: Übung
+    math: $$\sqrt{a} SS \sqrt{b}$$
+    randomize:
+      - a, b
+  level4: 
+    instruction: Schreibe anders
+    type: Übung
+    math: $$m\sqrt{a} SS l\sqrt{b}^c$$
+    randomize:
+      - a, b, m, l, c
+parentheses:
+  level1: 
+    instruction: Multipliziere aus
+    type: Übung
+    math: $$a ( b * c)$$
+    randomize:
+      - a, b, c
+  level2: 
+    instruction: Multipliziere aus
+    type: Übung
+    math: $$a ( b + c)$$
+    randomize:
+      - a, b, c
+  level3: 
+    instruction: Multipliziere aus
+    type: Übung
+    math: $$(a S1 b) *  ( b + c)$$
+    randomize:
+      - a, b, c
+  level4: 
+    instruction: Klammer aus
+    type: Übung
+    math: $$a*b+b*c$$
+    randomize:
+      - a, b, c
+  level5: 
+    instruction: Klammer aus
+    type: Übung
+    math: $$a*b+b$$
+    randomize:
+      - a, b, c
