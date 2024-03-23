@@ -5,3 +5,5 @@ material/**
 runs/**
 configs/valid/testing.yaml
 scripts/__pycache__/**
+tags*
+test.*
