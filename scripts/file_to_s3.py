@@ -1,6 +1,7 @@
 import boto3
 from pathlib import Path
 from botocore.client import Config
+import os
 
 
 def file_to_s3(path, run_id) -> str:
@@ -11,10 +12,10 @@ def file_to_s3(path, run_id) -> str:
     s3_client = boto3.client(
         's3',
         region_name='eu-west-1',
-        aws_access_key_id='AKIARQ5JNVYSSJQPD5LZ',
-        aws_secret_access_key='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',
+        aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
+        aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
         config=Config(signature_version='s3v4'),
-    endpoint_url='https://s3.eu-west-1.amazonaws.com'
+        endpoint_url='https://s3.eu-west-1.amazonaws.com'
     )
 
     # Upload the file
