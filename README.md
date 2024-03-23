@@ -2,7 +2,7 @@
 This repo allows tutors to send exercises compiled through LaTeX to students via WhatsApp.
 The connection to Whatsapp is operated through [Twilio API](https://www.twilio.com/docs/iam/test-credentials#maincontent), hence the need for a Twilio account and credentials.
 Also, to hand the compiled images over to Twilio, they need to be uploaded to the web.
-Currently, that is being done through AWS S3 storage, hence, AWS credentials are needed. They are retrieved through the aws credentials file (`AWS_SHARED_CREDENTIALS_FILE`).
+Currently, that is being done through AWS S3 storage, hence, AWS credentials are needed. They are retrieved through the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
 
 # How to Operate
 1. Set up Twilio Account, Twilio Number to send via WhatsApp.
