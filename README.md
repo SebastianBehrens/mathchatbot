@@ -8,4 +8,4 @@ Currently, that is being done through AWS S3 storage, hence, AWS credentials are
 1. Set up Twilio Account, Twilio Number to send via WhatsApp.
 2. Set up AWS S3 credentials
 3. Configure config in `/configs/` based on the template (`configs/template.yaml`). In part that means setting up exercises in `exercises/exercises_general.yaml`.
-## Configure Exercises
+4. To then execute the pipeline call `main.py` using your .venv as the python source and passing the config as an argument. For example `.venv/bin/python main.py configs/valid/testing.yaml`.
