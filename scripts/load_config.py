@@ -4,7 +4,7 @@ import argparse
 import logging
 import yaml
 
-def load_config():
+def load_config() -> dict:
     # with command line arguments to config
 
     parser = argparse.ArgumentParser()
@@ -13,7 +13,7 @@ def load_config():
                         nargs='?',
                         default='configs/valid/testing.yaml')
 
-    conf_file = Path().cwd() / parser.parse_args().conf_file
+    conf_file: Path = Path().cwd() / parser.parse_args().conf_file
 
     if conf_file is None:
         raise "Config missing. It should be the first argument given to main.py."
@@ -23,7 +23,7 @@ def load_config():
     config["self"] = conf_file
 
 
-    file = str(conf_file).split("/")[-1]
+    file: str = str(conf_file).split("/")[-1]
     logging.info(f"Config loaded: {file}.")
 
     return(config)

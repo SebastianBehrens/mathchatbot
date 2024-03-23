@@ -2,10 +2,10 @@ import logging
 import datetime
 from pathlib import Path
 
-def instantiate_logger():
+def instantiate_logger() -> None:
 
-    suffix = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-    file_path = Path().cwd() / "logs" / f"{suffix}.log"
+    suffix: str = str(datetime.datetime.now().strftime('%Y-%m-%d'))
+    file_path: Path = Path().cwd() / "logs" / f"{suffix}.log"
 
     logging.basicConfig(
         filename=file_path,

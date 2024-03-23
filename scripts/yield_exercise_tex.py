@@ -1,4 +1,8 @@
-def yield_exercise_tex(type, topic, instruction, math):
+def yield_exercise_tex(
+        type: str,
+        topic: str,
+        instruction: str,
+        math:str) -> str:
 
     lat_newline = r"\\"
     tex_template = (

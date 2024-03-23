@@ -6,21 +6,21 @@ from numpy.random import choice
 from numpy import array
 from .instantiate_exercise import instantiate_exercise
 
-def fetch_exercises(config):
+def fetch_exercises(config: dict):
 
     topics = config.topics.keys()
     with open(Path().cwd() / "exercises" / "exercises_general.yaml",'r',encoding='utf8') as file:
-            content = DefaultMunch.fromDict(yaml.safe_load(file))
+            content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
     for topic in topics:
         # content contains q1, q2, q3, ex1, ex2, ...
-        levels = []
+        levels: list = []
         levels.append(list(content.keys()))
 
-        selection = []
+        selection: list = []
         for topic in topics:
             counter = 0
             while True:
-                topic_level = str(
+                topic_level: str = str(
                      choice(
                           array(
                                list(
@@ -30,7 +30,7 @@ def fetch_exercises(config):
                             1
                         )[0]
                     )
-                topic_level = topic + "." + topic_level
+                topic_level: str = topic + "." + topic_level
                 counter += 1
                 if topic_level not in config.past_exercises:
                     selection.append(topic_level)
@@ -55,7 +55,7 @@ def fetch_exercises(config):
         t = sel.split(".")[0]
         x = sel.split(".")[1]
         # content = DefaultMunch.fromDict(yaml.safe_load(file))
-        full_ex = content[t][x]
+        full_ex: dict = content[t][x]
         full_ex["topic"] = t.capitalize()
         inst_ex = instantiate_exercise(full_ex)
         out.append(inst_ex)

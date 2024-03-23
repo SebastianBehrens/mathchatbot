@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # print(uid)
     # check_up_on_past_exercises(uid, config)
     exercises = fetch_exercises(config)
-    messages_to_be_sent = []
+    messages_to_be_sent: list = []
     for exercise in exercises:
         tex = yield_exercise_tex(
                 type=exercise.type,
