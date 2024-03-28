@@ -18,4 +18,4 @@ def create_material(link, thema):
     with open(f"material/{thema}.yaml", "w") as file:
         file.write(md(str(soup)))
 
-create_material("https://studyflix.de/mathematik/potenzregeln-4323", "potregel")
+# create_material("https://studyflix.de/mathematik/potenzregeln-4323", "potregel")
