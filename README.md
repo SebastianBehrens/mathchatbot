@@ -9,3 +9,6 @@ Currently, that is being done through AWS S3 storage, hence, AWS credentials are
 2. Set up AWS S3 credentials
 3. Configure config in `/configs/` based on the template (`configs/template.yaml`). In part that means setting up exercises in `exercises/exercises_general.yaml`.
 4. To then execute the pipeline call `main.py` using your .venv as the python source and passing the config as an argument. For example `.venv/bin/python main.py configs/valid/testing.yaml`.
+
+<img width="559" alt="grafik" src="https://github.com/SebastianBehrens/mathchatbot/assets/51058351/c7d9c704-4c44-4dd3-92eb-ebc875bee135">
+
