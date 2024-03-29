@@ -1,14 +1,50 @@
-# Purpose
-This repo allows tutors to send exercises compiled through LaTeX to students via WhatsApp.
-The connection to Whatsapp is operated through [Twilio API](https://www.twilio.com/docs/iam/test-credentials#maincontent), hence the need for a Twilio account and credentials.
-Also, to hand the compiled images over to Twilio, they need to be uploaded to the web.
-Currently, that is being done through AWS S3 storage, hence, AWS credentials are needed. They are retrieved through the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+This repo forms a pipeline to distribute math exercises to students via telegram.
+<figure>
+    <img width="559" alt="grafik" src="https://github.com/SebastianBehrens/mathchatbot/assets/51058351/c7d9c704-4c44-4dd3-92eb-ebc875bee135">
+    <figcaption>Example: Bot `DeinMatheBot` (YourMathBot in german) sending exercises</figcaption>
+</figure> 
 
-# How to Operate
-1. Set up Twilio Account, Twilio Number to send via WhatsApp.
-2. Set up AWS S3 credentials
-3. Configure config in `/configs/` based on the template (`configs/template.yaml`). In part that means setting up exercises in `exercises/exercises_general.yaml`.
-4. To then execute the pipeline call `main.py` using your .venv as the python source and passing the config as an argument. For example `.venv/bin/python main.py configs/valid/testing.yaml`.
 
-<img width="559" alt="grafik" src="https://github.com/SebastianBehrens/mathchatbot/assets/51058351/c7d9c704-4c44-4dd3-92eb-ebc875bee135">
 
+Exercises are set up in general form. That means every topic contains levels.
+Every level is a question or exercise (so called exercise class).
+An exercise class refers to the general form of an exercise stored in a level.
+Any exercise is formulated in variables only. Those variables are then replaced with specific values, depending on the level. This process is called instantiation.
+
+Any student has a personal config:
+```yaml
+contact:
+  name: Kyle
+  telegram_chat_id: '-123'
+batch_size: 2
+topics:
+  fractions:
+    max_level: 6
+  exponents:
+    max_level: 3
+past_exercises:
+- fractions.level5
+- fractions.level4
+```
+## How to set up the bot
+1. Create a bot ([Documentation on core.telegram.org](https://core.telegram.org/bots/tutorial#obtain-your-bot-token))
+    - Open chat with `@BotFather`.
+    - Text him `/newbot`.
+    - Enter a name for your bot. (Remember this name will appear as the sender of the exercises.)
+2. Store credential on your system, e.g. `.zshrc` and update the reference to it in `send_message_telegram()` by adapting the variable name ([here](https://github.com/SebastianBehrens/mathchatbot/blob/359d070c99c6ce21c0bf0166ec93c98ee9bc1fcc/scripts/send_message_telegram.py#L10)).
+
+## How to set up a pipeline
+Prerequisite: Completed bot setup
+1. Create a group chat on your personal account.
+2. Add *your* bot to the group. I am emphasizing *your* because you might call your bot different to mine.
+3. Add `@getidsbot`. This bot determines returns the `chat_id` when added.
+4. Add `chat_id` to config. Caution: include the minus! It indicates a group chat.
+
+5. Create a virtual environment with the supplied requirements.txt.
+
+Your pipeline is set up and can be executed for example as follows:
+`.venv/bin/python main.py` or like this `.venv/bin/python main.py configs/testing.yaml`.
+Enjoy!
+
+## Remarks:
+- The reason this pipeline does not contain a proper scheduler that sends out messages at times specified in the config, or a function that sends messages to each config in the `configs/` directory, is that it is built as a per student function. This way, one can deploy it as an AWS Lambda Function, and handle the scheduling through the integrated cron scheduler that aws offers.
