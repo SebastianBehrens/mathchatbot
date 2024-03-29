@@ -10,3 +10,4 @@ test.*
 costs.numbers
 archive/**
 templates/latex.pdf
+**/__pycache__/**
