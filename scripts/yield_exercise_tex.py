@@ -8,9 +8,6 @@ def yield_exercise_tex(
         math:str) -> str:
 
     lat_newline = r"\\"
-    print("\n\n\n")
-    print(topic)
-    print("\n\n\n")
     if topic.lower() == "exponents":
         topic = "Exponenten"
     elif topic.lower() == "fractions":
@@ -24,20 +21,48 @@ def yield_exercise_tex(
         # send_message_telegram
 
 
-    tex_template = (
-        r"\documentclass[preview]{standalone}"
-        r"\usepackage{tcolorbox}"
-        r"\tcbuselibrary{theorems}"
-        f"\\newtcbtheorem[number within=section]{{mytheo}}{{{type}}}"
 
-        r"{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}"
-        r"\begin{document}"
-        r"\begin{mytheo*}"
-        f"{{{topic.capitalize()}}}"
-        f"{{{instruction}:"
-        f"{math}}}"
-        r"\end{mytheo*}"
-        r"\end{document}"
+    tex_template = (
+    r"""
+    \documentclass{standalone}
+    \usepackage{amsmath}
+    \usepackage[utf8]{inputenc} % to compile umlaute
+    \usepackage[breakable,skins]{tcolorbox}
+    \usepackage{xcolor}
+    \newtcolorbox{mybox}[1]{
+    before skip=1ex,
+    after skip=1ex,
+    top=2.5ex,
+    bottom=2.5ex,
+    width=18em,
+    breakable, 
+    enhanced,
+    coltitle=black,
+    colback=white,
+    sharp corners,
+    title={#1},
+    attach boxed title to top left={
+        yshift=-\tcboxedtitleheight,
+        xshift=\tcboxedtitleheight
+        },
+    boxed title style={
+        size=small,
+        colback=white,
+        sharp corners
+        }
+    }
+
+    \begin{document}
+    \begin{mybox}
+    """
+    f"{{{topic.capitalize()}}}"
+    r"\vspace{1.25em}"
+    f"{instruction}:"
+    f"{math}"
+    """
+    \end{mybox}
+    \end{document}
+    """
     )
 
     return (tex_template)
