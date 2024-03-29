@@ -6,9 +6,9 @@ from os import environ
 import logging
 
 
-def send_message_telegram(message, chat_id, image_path = None):
+def send_message_telegram(message, chat_id, config, image = None):
     token=environ["TELEGRAM_DEINMATHECHATBOT_API_KEY"]
-    if image_path is None:
+    if image is None:
         request_url = (
             f"https://api.telegram.org/"
             f"bot{token}/"
@@ -16,17 +16,20 @@ def send_message_telegram(message, chat_id, image_path = None):
             f'text={message}'
         )
         response = requests.post(request_url).json()
-        logging.info(response)
+        logging.info(f"Message sent.")
+        logging.info(f"└─ to: {config.contact.name}")
+        logging.info(f"└─ id: {response['result']['message_id']}")
     else:
         request_url = (
             f"https://api.telegram.org/"
             f"bot{token}/"
             f"sendPhoto?chat_id={chat_id}"
         )
-
         files = {
-            'photo': open(image_path, 'rb')
+            'photo': image
         }
 
-        # response = requests.post(request_url, files = files).json()
-        # print(response)
+        response = requests.post(request_url, files = files).json()
+        logging.info(f"Image sent.")
+        logging.info(f"└─ to: {config.contact.name}")
+        logging.info(f"└─ id: {response['result']['message_id']}")
