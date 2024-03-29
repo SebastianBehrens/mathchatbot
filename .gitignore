@@ -9,3 +9,4 @@ tags*
 test.*
 costs.numbers
 archive/**
+templates/latex.pdf
