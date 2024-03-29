@@ -8,3 +8,4 @@ scripts/__pycache__/**
 tags*
 test.*
 costs.numbers
+archive/**
