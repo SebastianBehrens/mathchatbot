@@ -44,7 +44,8 @@ def fetch_exercises(config: dict):
 
             # only select topic-level if that topic-level is not in cache of
             # previously submitted exercises
-            if topic_level not in config.past_exercises:
+            if (topic_level not in config.past_exercises and
+                topic_level not in selection):
                 selection.append(topic_level)
                 break
 
