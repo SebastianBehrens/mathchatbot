@@ -62,7 +62,7 @@ def fetch_exercises(config: dict):
             if len(config.past_exercises) >= 3:
                     config.past_exercises.pop(0)
         del config["self"]
-        yaml.safe_dump(config, file)
+        yaml.safe_dump(config, file, sort_keys=False)
         logging.info("Cached exercise in config.")
 
     # instantiate exercises
@@ -77,48 +77,3 @@ def fetch_exercises(config: dict):
         out.append(inst_ex)
 
     return(out)
-
-# ================= OLD =================
-# def fetch_exercises(config):
-
-#     exercises = {}
-#     for topic in config.exercises.keys():
-#             with open(Path().cwd() / "exercises" / f"{topic}.yaml",'r',encoding='utf8') as file:
-#                 content = DefaultMunch.fromDict(yaml.safe_load(file))
-#                 # content contains q1, q2, q3, ex1, ex2, ...
-#             exercises[topic] = list(content.keys())
-
-#     selection = []
-#     for topic in exercises.keys():
-#         while True:
-#             topic_ex = str(choice(exercises[topic], 1)[0])
-#             if topic_ex not in config.past_exercises:
-#                 selection.append(topic + "." + topic_ex)
-#                 break
-
-#     with open(config.self, 'w') as file:
-#         for item in selection:
-#             config.past_exercises.append(item)
-#             if len(config.past_exercises) >= 3:
-#                     config.past_exercises.pop(0)
-#         del config["self"]
-#         yaml.safe_dump(config, file)
-#         logging.info("Cached exercise in config.")
-
-#     out = []
-#     for sel in selection:
-#         t = sel.split(".")[0]
-#         x = sel.split(".")[1]
-#         with open(
-#              Path().cwd() / "exercises" / f"{t}.yaml",'r', encoding='utf8') as file:
-#             content = DefaultMunch.fromDict(yaml.safe_load(file))
-#             full_ex = content[x]
-#             full_ex["topic"] = t
-#             out.append(full_ex)
-
-
-
-#     return(out)
-
-
-#     # return(content.)
