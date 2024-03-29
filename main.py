@@ -1,4 +1,6 @@
-from scripts.check_up_on_past_exercises import check_up_on_past_exercises
+# from scripts.check_up_on_past_exercises import check_up_on_past_exercises
+import logging
+
 from scripts.dispatch_messages          import dispatch_messages
 from scripts.fetch_exercises            import fetch_exercises
 from scripts.prepare_messages             import prepare_messages
@@ -16,3 +18,4 @@ if __name__ == "__main__":
     exercises = fetch_exercises(config)
     messages_to_be_sent = prepare_messages(exercises, path, config)
     dispatch_messages(messages_to_be_sent, config)
+    logging.info("Run finished")
