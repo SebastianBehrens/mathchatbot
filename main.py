@@ -8,7 +8,8 @@ from scripts.initialize_folder_today    import initialize_folder_today
 from scripts.instantiate_logger         import instantiate_logger
 from scripts.load_config                import load_config
 from scripts.validate_config            import validate_config
-def main(config_path):
+
+def main(config_path=None):
     instantiate_logger()
     config = load_config(config_path)
     validate_config(config)
