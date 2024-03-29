@@ -2,13 +2,13 @@ exponents:
   level1: 
     instruction: Rechne aus
     type: Übung
-    math: $$x^a S1 y^a$$
+    math: $$x^{a} S1 y^{a}$$
     randomize:
       - x, y, a
   level2: 
     instruction: Rechne aus
     type: Übung
-    math: $$mx^b S1 ny^c$$
+    math: $$mx^{b} S1 ny^{c}$$
     randomize:
       - x, y, m, n
 fractions:
