@@ -30,7 +30,7 @@ def load_config(config_path) -> dict:
     # add path of config to config, to then later on update that config
     config["self"] = conf_file
 
-    # log only name_of_config
+    # log name_of_config (xyz.yaml) instead of full path
     logging.info(f"Config loaded: {str(conf_file).split("/")[-1]}.")
 
     return(config)
