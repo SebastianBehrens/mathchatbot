@@ -11,3 +11,4 @@ costs.numbers
 archive/**
 templates/latex.pdf
 **/__pycache__/**
+untracked.txt
