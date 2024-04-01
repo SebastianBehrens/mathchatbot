@@ -12,37 +12,39 @@
 %\end{mytheo*}
 %\end{document}
 
-     \documentclass{standalone}
-    \usepackage{amsmath}
-    \usepackage[utf8]{inputenc} % to compile umlaute
-    \usepackage[breakable,skins]{tcolorbox}
-    \usepackage{xcolor}
-    \newtcolorbox{mybox}[1]{
-    before skip=1ex,
-    after skip=1ex,
-    top=2.5ex,
-    bottom=2.5ex,
-    width=18em,
-    breakable, 
-    enhanced,
-    coltitle=black,
+\documentclass{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc} % to compile umlaute
+\usepackage[breakable,skins]{tcolorbox}
+\usepackage{xcolor}
+\newtcolorbox{mybox}[1]{
+before skip=1ex,
+after skip=1ex,
+top=2.5ex,
+bottom=2.5ex,
+width=18em,
+breakable, 
+enhanced,
+coltitle=black,
+colback=white,
+sharp corners,
+title={#1},
+attach boxed title to top left={
+    yshift=-\tcboxedtitleheight,
+    xshift=\tcboxedtitleheight
+    },
+boxed title style={
+    size=small,
     colback=white,
     sharp corners,
-    title={#1},
-    attach boxed title to top left={
-        yshift=-\tcboxedtitleheight,
-        xshift=\tcboxedtitleheight
-        },
-    boxed title style={
-        size=small,
-        colback=white,
-        sharp corners
-        }
     }
+}
 
-    \begin{document}
-    \begin{mybox}
-    {Brüche}\vspace{1.25em}Rechne aus:\\$$\frac{3}{a} * \frac{-1}{-3}$$
+\begin{document}
+\begin{mybox}
+{Brüche}\vspace{1.25em}Rechne aus: $$a^b * a^c$$
+Ist das das selbe wie $a^{(b+c)}?$
 
 %==== THEOREM =====
 %\documentclass{standalone}
