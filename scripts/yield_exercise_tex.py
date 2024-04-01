@@ -2,23 +2,12 @@ import logging
 # TODO: handle errors per notification
 # from send_message_telegram send_message_telegram
 def yield_exercise_tex(
-        type: str,
-        topic: str,
-        instruction: str,
-        math:str) -> str:
+        type: str = "",
+        topic: str = "",
+        instruction: str = "",
+        math:str = "") -> str:
 
     lat_newline = r"\\"
-    if topic.lower() == "exponents":
-        topic = "Exponenten"
-    elif topic.lower() == "fractions":
-        topic = "Brüche"
-    elif topic.lower() == "roots":
-        topic = "Wurzeln"
-    elif topic.lower() == "parentheses":
-        topic = "Klammern"
-    else:
-        logging.error("topic not yet translated.")
-        # send_message_telegram
 
 
 
@@ -57,7 +46,7 @@ def yield_exercise_tex(
     """
     f"{{{topic.capitalize()}}}"
     r"\vspace{1.25em}"
-    f"{instruction}:"
+    f"{instruction}"
     f"{math}"
     """
     \end{mybox}
