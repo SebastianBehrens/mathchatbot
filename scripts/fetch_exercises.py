@@ -12,7 +12,7 @@ from scripts.instantiate_exercise import instantiate_exercise
 def fetch_exercises(config: dict):
 
     # get templates of exercises. structure: topic - level
-    with open(Path().cwd() / "exercises" / "exercises_general.yaml",'r',encoding='utf8') as file:
+    with open(Path().cwd() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
             content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
 
     exercises = []
