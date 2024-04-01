@@ -1,0 +1,279 @@
+Basics:
+    level1:
+        instruction: Was ist eine Summe?
+    level11:
+        instruction: Was ist ein Summand?
+    level2:
+        instruction: Was ist ein Produkt?
+    level21:
+        instruction: Was ist ein Faktor?
+    level3:
+        instruction: Was ist ein Quotient? Was hat das mit dem Wort "Quote" zu tun?
+    level31:
+        instruction: Was ist ein Divisor?
+    level32:
+        instruction: Was ist ein Dividend? Was ist ein Divisor?
+    level4:
+        instruction: Was ist eine Differenz?
+    level41:
+        instruction: Was ist der Minuend und was ist der Subtrahend in folgender Differenz?
+        math: $$a-b$$
+        vars:
+            a: any
+            b: any
+    level42:
+        instruction: Was ist der Minuend und was ist der Subtrahend in folgender Differenz?
+        math: $$a * \frac{b}{c} - d$$
+        # TODO: verify correct parsing and randomization if one writes (a,b, c, d) - wrong spacing of args
+        vars:
+            a: any
+            b: any
+            c: nonzero
+            d: any
+
+
+Potenzen:
+    level0:
+        instruction: Was ist ein Exponent? Gib 2 Beispiele.
+    level1:
+      instruction: Rechne aus.
+      math: $$a^{b} * a^{c}$$
+      vars:
+          a: nonzero
+          b: nonzero
+          c: nonzero
+    level12:
+      instruction: Zerlege in zwei Faktoren.
+      math: $$a^{(b+c)}$$
+      vars:
+        a: any
+        b: any
+        c: any
+    level21:
+        instruction: Rechne aus.
+        math: $$\frac{a^{b}}{a^{c}}$$
+    level22:
+        instruction: Zerlege in einen Bruch.
+        math: $$a^{(b-c)}$$
+    level23:
+        instruction: Zerlege in einen Bruch.
+        math: $$a^{(b)}$$
+    level3:
+        instruction: Rechne aus.
+        math: $$(a^{b})^{c}$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+    level31:
+        instruction: Rechne aus.
+        math: $$(a^{b})^{c}$$
+    level32:
+        instruction: Stimmt folgende Gleichung?
+        math: $$a^{(b*c)} = (a^{b})^{c}$$
+    level4:
+        instruction: Schreibe anders.
+        math: $$a^{b} * c^{b}$$
+        vars:
+            b: any
+    level41:
+        instruction: Stimmt folgende Gleichung?
+        math: $$a^{b} * c^{b} = (a*c)^{(b})$$
+        vars:
+            a: any
+            b: any
+            c: any
+    level5:
+        instruction: Vereinfache. (Schreibe anders)
+        math: $$\frac{a^{b}}{c^{b}}$$
+        vars:
+            a: any
+            b: any
+            c: nonzero
+      #- GuidedEx
+      #  Kompliziert. 
+      #    - Rechne aus: a^b : c^b
+      #    - Ist das das selbe wie (a:c)^(b)?
+      #    - Wieso? (Tipp: Zeige es indem du den Bruch mit Produkten als Division von Brüchen schreibst.)
+    level6:
+      instruction: Schreibe anders.
+      math: $$a^{(-b)}$$
+      vars:
+        a: any
+        b: positive
+    level7:
+        instruction: Stimmt folgende Gleichung? Begründe.
+        math: $$a^{(-b)} = \frac{1}{a^{b}}$$
+        vars:
+            a: any
+            b: any
+    level8:
+        instruction: Was ist folgender Term (ohne TR)?
+        math: $$a^0$$
+        vars:
+            a: nonzero
+    level9:
+    instruction: Rechne aus.
+    math: $$ab^{c} + mb^{c}$$
+    vars:
+        a: any
+        c: any
+Brüche:
+    level01:
+       instruction: Wie heisst die Zahl über dem Bruchstrich?
+    level02 :
+       instruction: Wie heisst die Zahl unter dem Bruchstrich?
+    level03:
+        instruction: Vereinfache.
+        math: $$\frac{a}{a}$$
+        vars:
+            a: nonzero
+    level04:
+        instruction: Rechne aus (ohne TR).
+        math: $$a * \frac{b}{d}$$
+        vars:
+            a: nonzero
+            c: nonzero
+            b: var
+   # level11:
+   #     instruction:
+   #     math:
+   #     vars:
+   #     - Rechne aus a/b + a/b
+    level12:
+        instruction: Rechne aus.
+        math: $$\frac{a}{b} + \frac{a}{c}$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+    level2:
+        instruction: Rechne aus.
+        math: $$\frac{a}{b} + \frac{a}{b}$$
+        vars:
+            a: any
+            b: any
+    level21:
+        instruction: Rechne aus.
+        math: $$\frac{a}{b} - \frac{a}{c}$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+    level22:
+        instruction: Wann muss man Brüche gleichnamig machen?
+    level23:
+        instruction: Muss man die Brüche gleichnamig machen, um folgendes auszurechnen.
+        math: $$\frac{a}{b}  * \frac{c}{c}$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+    level31:
+        instruction: Rechne aus.
+        math: $$\frac{a}{b} * \frac{a}{b}$$
+        vars:
+            a: nonzero
+            b: nonzero
+    level32:
+        instruction: Rechne aus.
+        math: $$\frac{a}{b} * \frac{c}{d}$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+            d: nonzero
+    level51:
+        instruction: Rechne aus.
+        math: $$\frac{\frac{a}{b}}{\frac{a}{b}}$$
+        vars:
+            b: nonzero
+    level52:
+        instruction: Rechne aus.
+        math: $$\frac{\frac{m}{n}}{\frac{i}{j}}$$
+        vars:
+            m: nonzero
+            n: nonzero
+            i: nonzero
+            j: nonzero
+Wurzeln:
+    level1:
+        instruction: Was macht eine Wurzel?
+        answer: Sie findet eine Zahl, die mit sich selbst multipliziert ist, wieder die ursprüngliche Zahl gibt. Beispiel. $\sqrt{4} = 2$ und $2*2 = 4$
+    level2:
+        instruction: Es gibt die zum Beispiel die zweite, dritte, vierte Wurzel (usw.). Welche Wurzel ist folgende?
+        math: $$\sqrt{8}$$
+    level31:
+        instruction: Wie kann man folgende Wurzel als Exponent schreiben?
+        math: $$\sqrt[a]{b}$$
+        vars:
+            a: positive
+            b: nonzero
+    level32:
+        instruction: Wie kann man folgendes als Wurzel schreiben?
+        math: $$a^{\frac{b}{c}}$$
+        vars:
+            a: positive
+            b: positive
+            c: positive
+    level4:
+        instruction: Rechne aus.
+        math: $$\sqrt{a} * \sqrt{a}$$
+        vars:
+            a: positive
+    level5:
+        instruction: Vereinfache.
+        math: $$\sqrt{a} * \sqrt{b}$$
+        vars:
+            a: positive
+            b: positive
+    level51:
+        instruction: Vereinfache.
+        math: $$\sqrt{\frac{a}{b}} * \sqrt{\frac{c}{d}}$$
+        vars:
+            a: positive
+            b: positive
+            c: positive
+            d: positive
+Klammern:
+    level0:
+        instruction: Was heisst es Auszuklammern?
+        answer: Einen Faktor vor eine Klammer zu setzen.
+    level1:
+        instruction: Faktorisiere, falls möglich.
+        math: $$a * b + b * c$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+    level2:
+        instruction: Faktorisiere, falls möglich.
+        math: $$a * \frac{c}{d} + b * \frac{c}{d}$$
+        vars:
+            a: nonzero
+            b: nonzero
+            c: nonzero
+            d: nonzero
+    level3:
+        instruction: Faktorisiere, falls möglich.
+        math: $$m\sqrt{a} SPM l\sqrt{a}$$
+        vars:
+            m: any
+            l: any
+            a: positive
+    Gleichungen:
+        level0:
+            instruction: Finde $x$.
+            math: $$x+3 = 5$$
+        level1:
+            instruction: Finde $x$.
+            math: $$3x = 9$$
+        level2:
+            instruction: Finde $x$.
+            math: $$3x + 6 = 18$$
+        level3:
+            instruction: Finde $x$.
+            math: $$\frac{x + b}{a} = \frac{2 - 2x}{3}$$
+            vars:
+                a: positive
+                b: positive
