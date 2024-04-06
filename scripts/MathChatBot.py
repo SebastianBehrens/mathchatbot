@@ -30,6 +30,6 @@ def MathChatBot(config_path=None):
 
     messages_to_be_sent = prepare_messages(exercises, path, config)
 
-    dispatch_messages(messages_to_be_sent, config)
+    # dispatch_messages(messages_to_be_sent, config)
 
     logging.info("Run finished")
