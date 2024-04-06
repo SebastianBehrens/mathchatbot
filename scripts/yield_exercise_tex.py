@@ -7,6 +7,15 @@ def yield_exercise_tex(
         instruction: str = "",
         math:str = "") -> str:
 
+    if type is None:
+        type = ""
+    if topic is None:
+        topic = ""
+    if instruction is None:
+        raise  Exception("Topic supplied to yield_exercise_tex is none.")
+    if math is None:
+        math = ""
+
     lat_newline = r"\\"
 
 
