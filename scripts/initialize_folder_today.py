@@ -8,6 +8,6 @@ def initialize_folder_today() -> Path:
     path: Path = Path().cwd() / "runs" / folder_today
     path.mkdir(parents=True, exist_ok=True)
     system(f"rm -f {path / '*'}")
-    logging.info("Run folder created")
+    logging.info("Run folder created.")
     return (path)
 
