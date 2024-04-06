@@ -1,12 +1,12 @@
 contact:
-  name: Sam
-  telegram_chat_id: -4148049637
+  name: Kyle
+  telegram_chat_id: -4159900892
 batch_size: 2
 topics:
-  "Br\xFCche":
+  Brüche:
     max_level: 6
   Potenzen:
     max_level: 2
 past_exercises:
-- "Br\xFCche.level12"
+- Potenzen.level0
 - Potenzen.level0
