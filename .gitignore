@@ -4,6 +4,7 @@ logs/**
 material/**
 runs/**
 scripts/__pycache__/**
+configs/**
 tags*
 test.*
 costs.numbers
@@ -12,3 +13,4 @@ templates/latex.pdf
 **/__pycache__/**
 **/*untracked*.*
 **/*scratch*.*
+.python_packages
