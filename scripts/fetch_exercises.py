@@ -62,7 +62,7 @@ def fetch_exercises(config: dict):
             if len(config.past_exercises) >= 3:
                     config.past_exercises.pop(0)
         del config["self"]
-        yaml.safe_dump(config, file, sort_keys=False)
+        yaml.safe_dump(config, file, sort_keys=False, allow_unicode=True)
         logging.info("Cached exercise in config.")
 
     # instantiate exercises
