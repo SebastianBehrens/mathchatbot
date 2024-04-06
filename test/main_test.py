@@ -6,7 +6,7 @@ class Main(unittest.TestCase):
 
     def test_everything(self):
         # main(config_path="configs/valid/testing.yaml")
-        configs = get_configs("configs/testing/*.yaml")
+        configs = get_configs("test/test_configs")
         for conf in configs:
             MathChatBot(config_path=conf)
 
