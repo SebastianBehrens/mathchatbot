@@ -23,12 +23,12 @@ Basics:
             b: any
     level42:
         instruction: Was ist der Minuend und was ist der Subtrahend in folgender Differenz?
-        math: $$a * \frac{b}{c} - d$$
+        math: $$l * \frac{b}{n} - d$$
         # TODO: verify correct parsing and randomization if one writes (a,b, c, d) - wrong spacing of args
         vars:
-            a: any
+            l: any
             b: any
-            c: nonzero
+            n: nonzero
             d: any
 
 
@@ -85,11 +85,11 @@ Potenzen:
             c: any
     level5:
         instruction: Vereinfache. (Schreibe anders)
-        math: $$\frac{a^{b}}{c^{b}}$$
+        math: $$\frac{l^{b}}{m^{b}}$$
         vars:
-            a: any
+            l: any
             b: any
-            c: nonzero
+            m: nonzero
       #- GuidedEx
       #  Kompliziert. 
       #    - Rechne aus: a^b : c^b
@@ -103,9 +103,9 @@ Potenzen:
         b: positive
     level7:
         instruction: Stimmt folgende Gleichung? Begründe.
-        math: $$a^{(-b)} = \frac{1}{a^{b}}$$
+        math: $$l^{(-b)} = \frac{1}{l^{b}}$$
         vars:
-            a: any
+            l: any
             b: any
     level8:
         instruction: Was ist folgender Term (ohne TR)?
@@ -113,11 +113,11 @@ Potenzen:
         vars:
             a: nonzero
     level9:
-    instruction: Rechne aus.
-    math: $$ab^{c} + mb^{c}$$
-    vars:
-        a: any
-        c: any
+        instruction: Rechne aus.
+        math: $$ab^{c} + mb^{c}$$
+        vars:
+            a: any
+            c: any
 Brüche:
     level01:
        instruction: Wie heisst die Zahl über dem Bruchstrich?
@@ -125,16 +125,16 @@ Brüche:
        instruction: Wie heisst die Zahl unter dem Bruchstrich?
     level03:
         instruction: Vereinfache.
-        math: $$\frac{a}{a}$$
+        math: $$\frac{m}{m}$$
         vars:
-            a: nonzero
+            m: nonzero
     level04:
         instruction: Rechne aus (ohne TR).
-        math: $$a * \frac{b}{d}$$
+        math: $$l * \frac{b}{d}$$
         vars:
-            a: nonzero
-            c: nonzero
-            b: var
+            l: nonzero
+            d: nonzero
+            b: vars
    # level11:
    #     instruction:
    #     math:
@@ -142,52 +142,52 @@ Brüche:
    #     - Rechne aus a/b + a/b
     level12:
         instruction: Rechne aus.
-        math: $$\frac{a}{b} + \frac{a}{c}$$
+        math: $$\frac{m}{n} + \frac{m}{k}$$
         vars:
-            a: nonzero
-            b: nonzero
-            c: nonzero
+            m: nonzero
+            n: nonzero
+            k: nonzero
     level2:
         instruction: Rechne aus.
-        math: $$\frac{a}{b} + \frac{a}{b}$$
+        math: $$\frac{m}{n} + \frac{m}{n}$$
         vars:
-            a: any
-            b: any
+            m: any
+            n: any
     level21:
         instruction: Rechne aus.
-        math: $$\frac{a}{b} - \frac{a}{c}$$
+        math: $$\frac{m}{n} - \frac{m}{l}$$
         vars:
-            a: nonzero
-            b: nonzero
-            c: nonzero
+            m: nonzero
+            n: nonzero
+            l: nonzero
     level22:
         instruction: Wann muss man Brüche gleichnamig machen?
     level23:
         instruction: Muss man die Brüche gleichnamig machen, um folgendes auszurechnen.
-        math: $$\frac{a}{b}  * \frac{c}{c}$$
+        math: $$\frac{m}{n}  * \frac{k}{k}$$
         vars:
-            a: nonzero
-            b: nonzero
-            c: nonzero
+            m: nonzero
+            n: nonzero
+            k: nonzero
     level31:
         instruction: Rechne aus.
-        math: $$\frac{a}{b} * \frac{a}{b}$$
+        math: $$\frac{m}{n} * \frac{m}{n}$$
         vars:
-            a: nonzero
-            b: nonzero
+            m: nonzero
+            n: nonzero
     level32:
         instruction: Rechne aus.
-        math: $$\frac{a}{b} * \frac{c}{d}$$
+        math: $$\frac{m}{b} * \frac{n}{d}$$
         vars:
-            a: nonzero
+            m: nonzero
             b: nonzero
-            c: nonzero
+            n: nonzero
             d: nonzero
     level51:
         instruction: Rechne aus.
-        math: $$\frac{\frac{a}{b}}{\frac{a}{b}}$$
+        math: $$\frac{\frac{x}{n}}{\frac{x}{n}}$$
         vars:
-            b: nonzero
+            m: nonzero
     level52:
         instruction: Rechne aus.
         math: $$\frac{\frac{m}{n}}{\frac{i}{j}}$$
@@ -211,11 +211,11 @@ Wurzeln:
             b: nonzero
     level32:
         instruction: Wie kann man folgendes als Wurzel schreiben?
-        math: $$a^{\frac{b}{c}}$$
+        math: $$p^{\frac{b}{d}}$$
         vars:
-            a: positive
+            p: positive
             b: positive
-            c: positive
+            d: positive
     level4:
         instruction: Rechne aus.
         math: $$\sqrt{a} * \sqrt{a}$$
@@ -229,12 +229,12 @@ Wurzeln:
             b: positive
     level51:
         instruction: Vereinfache.
-        math: $$\sqrt{\frac{a}{b}} * \sqrt{\frac{c}{d}}$$
+        math: $$\sqrt{\frac{m}{n}} * \sqrt{\frac{p}{l}}$$
         vars:
-            a: positive
-            b: positive
-            c: positive
-            d: positive
+            m: positive
+            n: positive
+            p: positive
+            l: positive
 Klammern:
     level0:
         instruction: Was heisst es Auszuklammern?
@@ -248,11 +248,11 @@ Klammern:
             c: nonzero
     level2:
         instruction: Faktorisiere, falls möglich.
-        math: $$a * \frac{c}{d} + b * \frac{c}{d}$$
+        math: $$l * \frac{m}{d} + b * \frac{m}{d}$$
         vars:
-            a: nonzero
+            l: nonzero
             b: nonzero
-            c: nonzero
+            m: nonzero
             d: nonzero
     level3:
         instruction: Faktorisiere, falls möglich.
@@ -261,7 +261,7 @@ Klammern:
             m: any
             l: any
             a: positive
-    Gleichungen:
+Gleichungen:
         level0:
             instruction: Finde $x$.
             math: $$x+3 = 5$$
@@ -273,7 +273,7 @@ Klammern:
             math: $$3x + 6 = 18$$
         level3:
             instruction: Finde $x$.
-            math: $$\frac{x + b}{a} = \frac{2 - 2x}{3}$$
+            math: $$\frac{x + b}{q} = \frac{2 - 2x}{3}$$
             vars:
-                a: positive
+                q: positive
                 b: positive
