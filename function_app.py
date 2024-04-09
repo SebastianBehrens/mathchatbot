@@ -1,12 +1,13 @@
-import logging
 import azure.functions as func
+import logging
+from scripts.MathChatBot import MathChatBot
+from scripts.get_configs import get_configs
 
 app = func.FunctionApp()
 
-@app.schedule(schedule="0 0 0 * * *", arg_name="myTimer", run_on_startup=True,
+@app.schedule(schedule="*/5 * * * *", arg_name="myTimer", run_on_startup=True,
               use_monitor=False) 
 def timer_trigger_mathchatbot(myTimer: func.TimerRequest) -> None:
-    if myTimer.past_due:
-        logging.info('The timer is past due!')
-
-    logging.info('Python timer trigger function executed.')
+    configs = get_configs()
+    for conf in configs:
+        MathChatBot(config_path=conf)
