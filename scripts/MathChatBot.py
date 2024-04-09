@@ -26,6 +26,9 @@ def MathChatBot(config_path=None):
     
     # check_up_on_past_exercises(uid, config)
 
+    # one could create a list of dictionaries each containing all content to a client.
+    # one would then enrich those dictionaries when processing a configs content.
+
     exercises = fetch_exercises(config)
 
     messages_to_be_sent = prepare_messages(exercises, path, config)

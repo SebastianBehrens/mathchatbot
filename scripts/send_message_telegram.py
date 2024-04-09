@@ -8,7 +8,20 @@ import logging
 
 
 def send_message_telegram(message, chat_id, config, image = None):
-    token=environ["TELEGRAM_DEINMATHECHATBOT_API_KEY"]
+    """Send a message to a telegram chat.
+
+    Args:
+        message: Textual message to be sent.
+        chat_id: ID of the Chat.
+        config: Configuration file.
+        image: Image bytes to send as returned by pdf_to_png(). Defaults to None.
+
+    Raises:
+        Exception: _description_
+    """
+
+    token: str =environ["TELEGRAM_DEINMATHECHATBOT_API_KEY"]
+
     if image is None:
         request_url = (
             f"https://api.telegram.org/"

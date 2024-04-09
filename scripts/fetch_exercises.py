@@ -10,6 +10,13 @@ from scripts.candidate_levels_per_topic import candidate_levels_per_topic
 from scripts.instantiate_exercise import instantiate_exercise
 
 def fetch_exercises(config: dict):
+    """Fetch exercises.
+
+    From the set of available topics (each containing k levels), a subset of size config.batch_size is selected, of which some levels up to the maximum level in config.topics.<topic>.max_level is selected and then instantiated.
+
+    Args:
+        config: Configuration dictionary.
+    """
 
     # get templates of exercises. structure: topic - level
     with open(Path().cwd() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:

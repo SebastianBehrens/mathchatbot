@@ -3,6 +3,15 @@ import logging
 import yaml
 from pathlib import Path
 def validate_config(config):
+    """Validate the config for supported configurations.
+
+    Args:
+        config: Configuration dictionary.
+
+    Raises:
+        ValueError: If the specified maximum level of a topic exceeds the available levels a topic has.
+        ValueError: If the batch size is not an integer.
+    """
 
     # validate max_level
     for topic in config.topics.keys():

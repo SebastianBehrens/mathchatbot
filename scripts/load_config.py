@@ -4,23 +4,15 @@ import argparse
 import logging
 import yaml
 
-def load_config(config_path) -> dict:
+def load_config(config_path: str) -> dict:
+    """Load the configuration file of a student from the supplied path.
 
-    # # with command line arguments to config
-    # if config_path is None:
-    #     # parse
-    #     parser = argparse.ArgumentParser()
-    #     parser.add_argument('conf_file',
-    #                         type=str,
-    #                         nargs='?',
-    #                         default='configs/valid/testing.yaml')
+    Args:
+        config_path: string containing the path to the config relative to the bots base directory.
 
-    #     conf_file: Path = Path().cwd() / parser.parse_args().conf_file
-
-    #     if conf_file is None:
-    #         raise "Config missing. It should be the first argument given to main.py."
-    # else:
-        # conf_file: Path = Path().cwd() / config_path
+    Returns:
+        Configuration file as a dictionary.
+    """
 
     conf_file: Path = Path().cwd() / config_path
 
