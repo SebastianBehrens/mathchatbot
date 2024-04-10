@@ -1,6 +1,4 @@
 import logging
-# TODO: handle errors per notification
-# from send_message_telegram send_message_telegram
 def yield_exercise_tex(
         type: str = "",
         topic: str = "",

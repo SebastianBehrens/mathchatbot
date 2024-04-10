@@ -24,7 +24,6 @@ Basics:
     level42:
         instruction: Was ist der Minuend und was ist der Subtrahend in folgender Differenz?
         math: $$l * \frac{b}{n} - d$$
-        # TODO: verify correct parsing and randomization if one writes (a,b, c, d) - wrong spacing of args
         vars:
             l: any
             b: any

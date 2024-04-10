@@ -4,8 +4,6 @@ from numpy import array
 from re import split
 import logging
 
-# TODO: either approve range into the variables through config, or add sanity checker here, dividing by zero should not be possible.
-
 def instantiate_exercise(exercise) -> str:
     
     def fill_param(hint) -> int:
@@ -53,7 +51,6 @@ def instantiate_exercise(exercise) -> str:
             )
         return(sign[0])
 
-    # TODO: adopt for keys in ex.vars not through randomize
     if exercise.vars is not None:
         for var in exercise.vars.keys():
             exercise.math = exercise.math.replace(var, fill_param(exercise.vars[var]))
