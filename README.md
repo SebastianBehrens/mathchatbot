@@ -26,25 +26,19 @@ past_exercises:
 - fractions.level5
 - fractions.level4
 ```
-## How to set up the bot
+## Set up
 1. Create a bot ([Documentation on core.telegram.org](https://core.telegram.org/bots/tutorial#obtain-your-bot-token))
     - Open chat with `@BotFather`.
     - Text him `/newbot`.
     - Enter a name for your bot. (Remember this name will appear as the sender of the exercises.)
 2. Store credential on your system, e.g. `.zshrc` and update the reference to it in `send_message_telegram()` by adapting the variable name ([here](https://github.com/SebastianBehrens/mathchatbot/blob/359d070c99c6ce21c0bf0166ec93c98ee9bc1fcc/scripts/send_message_telegram.py#L10)).
-
-## How to set up a pipeline
-Prerequisite: Completed bot setup
-1. Create a group chat on your personal account.
-2. Add *your* bot to the group. I am emphasizing *your* because you might call your bot different to mine.
-3. Add `@getidsbot`. This bot determines returns the `chat_id` when added.
-4. Add `chat_id` to config. Caution: include the minus! It indicates a group chat.
-
-5. Create a virtual environment with the supplied requirements.txt.
-
-Your pipeline is set up and can be executed for example as follows:
-`.venv/bin/python main.py` or like this `.venv/bin/python main.py configs/testing.yaml`.
-Enjoy!
+3. Create a virtual environment with the supplied requirements.txt (for example: `python -m venv .venv`)
+4. Create a group chat to which the bot should talk.
+5. Add the bot to the group.
+6. Add `@getidsbot` to the group. It determines returns the `chat_id` when added.
+7. Create a config in `configs/valid`, and add the `chat_id` to it. Note: Include the minus! It indicates a group chat. You can find a template for a config in `config_template.yaml`.
+8. Set up the remaining options in the config.
+9. Both bot and config are set up. To test, run: `.venv/bin/python main.py`
 
 ## Remarks:
 - The reason this pipeline does not contain a proper scheduler that sends out messages at times specified in the config, or a function that sends messages to each config in the `configs/` directory, is that it is built as a per student function. This way, one can deploy it as an AWS Lambda Function, and handle the scheduling through the integrated cron scheduler that aws offers.
