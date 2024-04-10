@@ -20,7 +20,7 @@ def get_configs(folder: str ='configs/valid/') -> None:
 
     if len(list_of_configs) == 0:
         logging.info(f"No configs in directory {folder}. Program exited.")
-        raise NameError(f"No configs in directory {folder}. Program exited.")
+        raise FileNotFoundError(f"No configs in directory '{folder}'.")
 
     return(list_of_configs)
 
