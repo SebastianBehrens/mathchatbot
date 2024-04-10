@@ -41,4 +41,4 @@ past_exercises:
 9. Both bot and config are set up. To test, run: `.venv/bin/python main.py`
 
 ## Remarks:
-- The reason this pipeline does not contain a proper scheduler that sends out messages at times specified in the config, or a function that sends messages to each config in the `configs/` directory, is that it is built as a per student function. This way, one can deploy it as an AWS Lambda Function, and handle the scheduling through the integrated cron scheduler that aws offers.
+- This program does not contain an internal scheduler. Reason being that this program is intended to be scheduled on a cronjob. Any scheduling between scheduled cronjob execution can still occur through the config.
