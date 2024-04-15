@@ -1,7 +1,8 @@
 from pathlib import Path
 import logging
 
-def get_configs(folder: str ='configs/valid/') -> None:
+
+def get_configs(folder: str = 'configs/valid/') -> list[str]:
     """Fetch all configuration files in a directory.
 
     The entry point of this program (main.py) is set up to go through every configuration file (.yaml). The configuration file then serves as the decision point for selective processing.
@@ -22,6 +23,4 @@ def get_configs(folder: str ='configs/valid/') -> None:
         logging.info(f"No configs in directory {folder}. Program exited.")
         raise FileNotFoundError(f"No configs in directory '{folder}'.")
 
-    return(list_of_configs)
-
-    
+    return (list_of_configs)
