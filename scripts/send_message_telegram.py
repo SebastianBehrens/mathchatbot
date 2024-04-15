@@ -11,7 +11,7 @@ from pathlib import Path
 load_dotenv(Path().cwd() / ".env")
 
 
-def send_message_telegram(message, chat_id, config, image = None):
+def send_message_telegram(message, chat_id, config, image=None):
     """Send a message to a telegram chat.
 
     Args:
@@ -24,7 +24,7 @@ def send_message_telegram(message, chat_id, config, image = None):
         Exception: _description_
     """
 
-    token: str =environ["TELEGRAM_DEINMATHECHATBOT_API_KEY"]
+    token: str = environ["TELEGRAM_DEINMATHECHATBOT_API_KEY"]
 
     if image is None:
         request_url = (
@@ -47,9 +47,9 @@ def send_message_telegram(message, chat_id, config, image = None):
             'photo': image
         }
 
-        response = requests.post(request_url, files = files).json()
+        response = requests.post(request_url, files=files).json()
         logging.info(f"Image sent.")
-    
+
     if not response['ok']:
         logging.error("Attempt to send message to telegram failed.")
         logging.error(f"Telegram \n{pformat(response)}")
