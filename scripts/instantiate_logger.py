@@ -17,5 +17,3 @@ def instantiate_logger() -> None:
         handlers=handlers,
         format='%(asctime)s - %(levelname)s - %(message)s')
     logger = logging.getLogger("MathChatBot")
-
-    logger.info("\n")
