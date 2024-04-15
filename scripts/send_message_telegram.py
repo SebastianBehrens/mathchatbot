@@ -6,6 +6,10 @@ from os import environ
 from pprint import pformat
 import logging
 
+from dotenv import load_dotenv
+from pathlib import Path
+load_dotenv(Path().cwd() / ".env")
+
 
 def send_message_telegram(message, chat_id, config, image = None):
     """Send a message to a telegram chat.
