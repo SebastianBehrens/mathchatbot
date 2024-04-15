@@ -1,0 +1,12 @@
+contact:
+  name: Sam
+  telegram_chat_id: -4148049637
+batch_size: 2
+topics:
+  Brüche:
+    max_level: 6
+  Potenzen:
+    max_level: 2
+past_exercises:
+- Potenzen.level1
+- Brüche.level04
