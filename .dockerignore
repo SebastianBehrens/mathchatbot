@@ -1,0 +1,10 @@
+.git/*
+.pytest_cache/*
+.venv/*
+.vscode/
+**/__pyache__/*
+archive/*
+material/*
+runs/*
+templates/*
+tests/*
