@@ -3,8 +3,10 @@ from numpy import array
 from numpy.random import choice
 from pathlib import Path
 import logging
-import yaml
-
+from pickle import load
+from pickle import dump
+from yaml import safe_load
+from re import sub as re_sub
 
 from scripts.candidate_levels_per_topic import candidate_levels_per_topic
 from scripts.instantiate_exercise import instantiate_exercise
@@ -20,7 +22,7 @@ def fetch_exercises(config: dict):
 
     # get templates of exercises. structure: topic - level
     with open(Path().cwd() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
-            content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
+            content: dict = DefaultMunch.fromDict(safe_load(file))
 
     exercises = []
 
@@ -63,14 +65,25 @@ def fetch_exercises(config: dict):
                 break
 
     # update list of past exercises in config
-    with open(config.self, 'w') as file:
-        for item in selection:
-            config.past_exercises.append(item)
-            if len(config.past_exercises) >= 3:
-                    config.past_exercises.pop(0)
-        del config["self"]
-        yaml.safe_dump(config, file, sort_keys=False, allow_unicode=True)
-        logging.info("Cached exercise in config.")
+    # TODO: store this pickle in aws s3
+    pickle_path = Path().cwd() / 'cache' / 'exercise_cache.pickle'
+    with open(pickle_path, 'rb') as pickle_f:
+        cache = load(file=pickle_f)
+
+    cache_id = f"{config.contact.name}_{re_sub("-", "", str(config.contact.telegram_chat_id))}"
+
+    if cache_id in cache.keys():
+        aux_cache = cache[cache_id]
+    else:
+        aux_cache = []
+
+    aux_cache = aux_cache + selection
+    aux_cache = aux_cache[-2:]
+    cache[cache_id] = aux_cache
+    with open(Path().cwd() / 'cache' / 'exercise_cache.pickle' , 'wb') as file:
+        dump(cache, file=file)
+
+    logging.info("Cached exercises for {config.contact.name}.")
 
     # instantiate exercises
     out = []
