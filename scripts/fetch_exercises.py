@@ -83,7 +83,7 @@ def fetch_exercises(config: dict):
     with open(Path().cwd() / 'cache' / 'exercise_cache.pickle' , 'wb') as file:
         dump(cache, file=file)
 
-    logging.info("Cached exercises for {config.contact.name}.")
+    logging.info(f"Cached exercises for {config.contact.name}.")
 
     # instantiate exercises
     out = []
