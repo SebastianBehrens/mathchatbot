@@ -1,7 +1,7 @@
 import urllib.parse
 import requests
 import logging
-from pathlib import Path
+
 
 def tex_to_pdf(tex, path, run_id):
     file = path / f"run_{run_id}.pdf"
@@ -19,4 +19,4 @@ def tex_to_pdf(tex, path, run_id):
     with open(file, 'wb') as f:
         f.write(response.content)
     logging.info("Saved pdf.")
-    return(file)
+    return file
