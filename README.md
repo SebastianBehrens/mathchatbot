@@ -23,14 +23,16 @@ topics:
   exponents:
     max_level: 3
 past_exercises:
-- fractions.level5
-- fractions.level4
+  - fractions.level5
+  - fractions.level4
 ```
+
 ## Set up
+
 1. Create a bot ([Documentation on core.telegram.org](https://core.telegram.org/bots/tutorial#obtain-your-bot-token))
-    - Open chat with `@BotFather`.
-    - Text him `/newbot`.
-    - Enter a name for your bot. (Remember this name will appear as the sender of the exercises.)
+   - Open chat with `@BotFather`.
+   - Text him `/newbot`.
+   - Enter a name for your bot. (Remember this name will appear as the sender of the exercises.)
 2. Store credential on your system, e.g. `.zshrc` and update the reference to it in `send_message_telegram()` by adapting the variable name ([here](https://github.com/SebastianBehrens/mathchatbot/blob/359d070c99c6ce21c0bf0166ec93c98ee9bc1fcc/scripts/send_message_telegram.py#L10)).
 3. Create a virtual environment with the supplied requirements.txt (for example: `python -m venv .venv`)
 4. Create a group chat to which the bot should talk.
