@@ -1,10 +1,9 @@
 This repo forms a pipeline to distribute math exercises to students via telegram.
+
 <figure>
     <img width="559" alt="grafik" src="https://github.com/SebastianBehrens/mathchatbot/assets/51058351/c7d9c704-4c44-4dd3-92eb-ebc875bee135">
     <figcaption>Example: Bot `DeinMatheBot` (YourMathBot in german) sending exercises</figcaption>
-</figure> 
-
-
+</figure>
 
 Exercises are set up in general form. That means every topic contains levels.
 Every level is a question or exercise (so called exercise class).
@@ -12,10 +11,11 @@ An exercise class refers to the general form of an exercise stored in a level.
 Any exercise is formulated in variables only. Those variables are then replaced with specific values, depending on the level. This process is called instantiation.
 
 Any student has a personal config:
+
 ```yaml
 contact:
   name: Kyle
-  telegram_chat_id: '-123'
+  telegram_chat_id: "-123"
 batch_size: 2
 topics:
   fractions:
