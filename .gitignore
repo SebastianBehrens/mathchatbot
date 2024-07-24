@@ -16,3 +16,4 @@ templates/latex.pdf
 **/*scratch*.*
 .python_packages
 configs/*
+.idea/
