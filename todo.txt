@@ -1,3 +1,5 @@
 # autocreate logs directory if not exists - done 25.05.24: 22:15
 
 # logging file not properly referenced when launched from outside of matchatbot dir - done 25.05.24 20:30
+
+# switch from latex api to local latex compilation
