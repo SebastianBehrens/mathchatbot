@@ -2,6 +2,8 @@ from munch import DefaultMunch
 import logging
 import yaml
 from pathlib import Path
+from scripts.get_base_dir import get_base_dir
+
 def validate_config(config):
     """Validate the config for supported configurations.
 
@@ -15,7 +17,7 @@ def validate_config(config):
 
     # validate max_level
     for topic in config.topics.keys():
-        with open(Path().cwd() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
+        with open(get_base_dir() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
                 content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
     if config.topics[topic].max_level != 'all':
         if config.topics[topic].max_level > len(content[topic].keys()):

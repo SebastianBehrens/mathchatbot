@@ -6,7 +6,7 @@ import sys
 def instantiate_logger() -> None:
 
     suffix: str = str(datetime.datetime.now().strftime('%Y-%m-%d'))
-    file_path: Path = Path().cwd() / "logs" / f"{suffix}.log"
+    file_path: Path = get_base_dir() / "logs" / f"{suffix}.log"
 
     file_handler = logging.FileHandler(filename=file_path)
     console_handler = logging.StreamHandler(stream=sys.stdout)

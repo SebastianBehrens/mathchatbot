@@ -1,5 +1,6 @@
 from pathlib import Path
 import logging
+from scripts.get_base_dir import get_base_dir
 
 
 def get_configs(folder: str = 'configs/valid/') -> list[str]:
@@ -14,8 +15,8 @@ def get_configs(folder: str = 'configs/valid/') -> list[str]:
     """
 
     file_regex = f"{folder}/*.yaml".replace("//", "/")
-    pathlist = Path().cwd().glob(file_regex)
-    pathlist_rel = [path.relative_to(Path().cwd()) for path in pathlist]
+    pathlist = get_base_dir().glob(file_regex)
+    pathlist_rel = [path.relative_to(get_base_dir()) for path in pathlist]
 
     list_of_configs = [str(path) for path in pathlist_rel]
 

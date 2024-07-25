@@ -8,6 +8,7 @@ import yaml
 
 from scripts.candidate_levels_per_topic import candidate_levels_per_topic
 from scripts.instantiate_exercise import instantiate_exercise
+from scripts.get_base_dir import get_base_dir
 
 def fetch_exercises(config: dict):
     """Fetch exercises.
@@ -19,7 +20,7 @@ def fetch_exercises(config: dict):
     """
 
     # get templates of exercises. structure: topic - level
-    with open(Path().cwd() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
+    with open(get_base_dir() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
             content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
 
     exercises = []
