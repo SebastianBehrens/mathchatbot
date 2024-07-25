@@ -8,7 +8,9 @@ import logging
 
 from dotenv import load_dotenv
 from pathlib import Path
-load_dotenv(Path().cwd() / ".env")
+from scripts.get_base_dir import get_base_dir
+
+load_dotenv(get_base_dir() / ".env")
 
 
 def send_message_telegram(message, chat_id, config, image=None):
