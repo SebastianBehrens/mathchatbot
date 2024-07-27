@@ -117,6 +117,7 @@ Potenzen:
         vars:
             a: any
             c: any
+
 Brüche:
     level01:
        instruction: Wie heisst die Zahl über dem Bruchstrich?
@@ -195,6 +196,7 @@ Brüche:
             n: nonzero
             i: nonzero
             j: nonzero
+
 Wurzeln:
     level1:
         instruction: Was macht eine Wurzel?
@@ -234,6 +236,7 @@ Wurzeln:
             n: positive
             p: positive
             l: positive
+
 Klammern:
     level0:
         instruction: Was heisst es Auszuklammern?
@@ -260,6 +263,7 @@ Klammern:
             m: any
             l: any
             a: positive
+
 Gleichungen:
         level0:
             instruction: Finde $x$.
@@ -276,6 +280,7 @@ Gleichungen:
             vars:
                 q: positive
                 b: positive
+
 LineareFunktionen:
         level0:
             instruction: Was sind ist die generelle Gleichung einer linearen Funktion?
