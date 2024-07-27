@@ -23,7 +23,7 @@ def fetch_exercises(config: dict):
 
     # get templates of exercises. structure: topic - level
     with open(get_base_dir() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
-            content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
+            content: dict = DefaultMunch.fromDict(safe_load(file))
 
     exercises = []
 
