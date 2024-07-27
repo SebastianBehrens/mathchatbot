@@ -1,0 +1,20 @@
+contact:
+  name: Kyle
+  telegram_chat_id: -4159900892
+batch_size: 2
+topics:
+  Basics:
+    max_level: 42
+  Potenzen:
+    max_level: 9
+  Brüche:
+    max_level: 51
+  Klammern:
+      max_level: 3
+  Gleichungen:
+      max_level: 3
+  LineareFunktionen:
+    max_level: 1
+past_exercises:
+- Potenzen.level1
+- Potenzen.level1
