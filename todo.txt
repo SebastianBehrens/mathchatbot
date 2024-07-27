@@ -6,3 +6,4 @@
 
 # fix imports or module structure so that i can execute files from outside of directory and from inside directory.
 
+# resolve the different exercises_general_* files
