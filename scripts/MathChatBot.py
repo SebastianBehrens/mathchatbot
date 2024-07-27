@@ -9,28 +9,32 @@ from scripts.load_config import load_config
 from scripts.validate_config import validate_config
 
 
-def MathChatBot(config_path=None):
+def MathChatBot(config_path):
     """Main function of the MathChatBot which samples from exercises, creates compiled images, and sends them via telegram.
 
     Args:
-        config_path: Relative path to config from cwd. Defaults to None.
+        config_path: Relative path to config from cwd.
     """
 
-    config = load_config(config_path)
+    config = load_config(config_path=config_path)
 
-    validate_config(config)
+    validate_config(config=config)
 
-    path = initialize_folder_today()
+    run_path = initialize_folder_today()
 
     # check_up_on_past_exercises(uid, config)
 
     # one could create a list of dictionaries each containing all content to a client.
     # one would then enrich those dictionaries when processing a configs content.
 
-    exercises = fetch_exercises(config)
+    exercises: list[dict] = fetch_exercises(config=config)
 
-    messages_to_be_sent = prepare_messages(exercises, path, config)
+    messages_to_be_sent: list[dict] = prepare_messages(
+            exercises=exercises,
+            run_path=run_path,
+            config=config
+            )
 
-    dispatch_messages(messages_to_be_sent, config)
+    dispatch_messages(messages_to_send=messages_to_be_sent, config=config)
 
     logging.info("Run finished.")
