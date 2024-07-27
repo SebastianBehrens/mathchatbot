@@ -12,7 +12,7 @@ def pickle_handler(mode, string = ""):
         except FileNotFoundError:
             content = set()
             pass
-        return(content)
+        return content
     if mode == "append":
         sids = pickle_handler(mode = "fetch")
         sids.add(string)

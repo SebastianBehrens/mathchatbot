@@ -97,4 +97,4 @@ def fetch_exercises(config: dict):
         inst_ex = instantiate_exercise(full_ex)
         out.append(inst_ex)
 
-    return(out)
+    return out

@@ -5,4 +5,4 @@ def candidate_levels_per_topic(max_level, topic, content):
     else:
         candidate_levels = levels[0:max_level]
 
-    return(candidate_levels)
+    return candidate_levels

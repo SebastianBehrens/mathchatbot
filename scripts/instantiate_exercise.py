@@ -34,7 +34,7 @@ def instantiate_exercise(exercise) -> str:
         else:
             logging.error(f"Unseen hint ({hint}) received in fill_param.")
             raise Exception(f"Unseen hint ({hint}) received in fill_param.")
-        return(str(digit[0]))
+        return str(digit[0])
 
     def get_sign(hint) -> str:
         if hint in ["SS", "S1", "S2", "S3", "S4"]:
@@ -49,7 +49,7 @@ def instantiate_exercise(exercise) -> str:
                 size=1,
                 p=array([0.5, 0.5])
             )
-        return(sign[0])
+        return sign[0]
 
     if exercise.vars is not None:
         for var in exercise.vars.keys():
@@ -57,4 +57,4 @@ def instantiate_exercise(exercise) -> str:
         for sign_replace in ["SS", "S1", "S2", "S3", "S4", "SPM"]:
             exercise.math = exercise.math.replace(sign_replace, get_sign(sign_replace))
 
-    return(exercise)
+    return exercise

@@ -29,4 +29,4 @@ def prepare_messages(exercises: list, path: str, config: dict):
             "mode": "send_message",
             "pdf_path": pdf_file
             })
-    return(messages_to_be_sent)
+    return messages_to_be_sent

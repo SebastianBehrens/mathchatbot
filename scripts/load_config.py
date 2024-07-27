@@ -26,4 +26,4 @@ def load_config(config_path: str) -> dict:
     # log name_of_config (xyz.yaml) instead of full path
     logging.info(f"Config loaded: {str(conf_file).split("/")[-1]}.")
 
-    return(config)
+    return config
