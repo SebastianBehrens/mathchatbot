@@ -1,11 +1,14 @@
 from pathlib import Path
 
 
-def get_base_dir(flg_relative=0):
-    if flg_relative:
-        base_path = Path().cwd()
-    else:
-        base_path = Path('/home/behseb/mathchatbot/')
+def get_base_dir():
+    """Get the path to the execution environment of the mathchatbot.
+
+    Returns:
+        Path of the execution environment (base directory).
+    """
+
+    base_path = Path('/home/behseb/mathchatbot/')
 
     return base_path
 
