@@ -11,8 +11,9 @@ def dispatch_messages(messages_to_send: list, config: dict):
         messages_to_send: List of messages to send as returned by prepare_messages().
         config: Configuration dictionary.
     """
+    plural_of_tasks = '' if len(messages_to_send)==1 else 'n'
     send_message_telegram(
-        message=f"Hi {config.contact.name}, löse bitte kurz diese Aufgabe(n):",
+        message=f"Hi {config.contact.name}, löse bitte kurz diese Aufgabe{plural_of_tasks}:",
         config=config,
         chat_id=config.contact.telegram_chat_id
     )
