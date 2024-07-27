@@ -68,23 +68,24 @@ def fetch_exercises(config: dict):
     # update list of past exercises in config
     # TODO: store this pickle in aws s3
     pickle_path = Path().cwd() / 'cache' / 'exercise_cache.pickle'
-    with open(pickle_path, 'rb') as pickle_f:
-        cache = load(file=pickle_f)
+    # with open(pickle_path, 'rb') as pickle_f:
+    #     cache = load(file=pickle_f)
 
-    cache_id = f"{config.contact.name}_{re_sub("-", "", str(config.contact.telegram_chat_id))}"
+    # cache_id = f"{config.contact.name}_{re_sub("-", "", str(config.contact.telegram_chat_id))}"
 
-    if cache_id in cache.keys():
-        aux_cache = cache[cache_id]
-    else:
-        aux_cache = []
+    # if cache_id in cache.keys():
+    #     aux_cache = cache[cache_id]
+    # else:
+    #     aux_cache = []
 
-    aux_cache = aux_cache + selection
-    aux_cache = aux_cache[-2:]
-    cache[cache_id] = aux_cache
-    with open(Path().cwd() / 'cache' / 'exercise_cache.pickle' , 'wb') as file:
-        dump(cache, file=file)
+    # aux_cache = aux_cache + selection
+    # aux_cache = aux_cache[-2:]
+    # cache[cache_id] = aux_cache
 
-    logging.info(f"Cached exercises for {config.contact.name}.")
+    # with open(Path().cwd() / 'cache' / 'exercise_cache.pickle' , 'wb') as file:
+    #     dump(cache, file=file)
+
+    # logging.info(f"Cached exercises for {config.contact.name}.")
 
     # instantiate exercises
     out = []
