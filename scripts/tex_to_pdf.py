@@ -16,7 +16,9 @@ def tex_to_pdf(tex, path, run_id):
         logging.error(f"└─ Response: {response.text}")
         logging.error("Program exited because of Exception.")
         raise Exception("Error occurred in tex_to_pdf. No pdf was created.")
+
     with open(file, 'wb') as f:
         f.write(response.content)
+
     logging.info("Saved pdf.")
     return file
