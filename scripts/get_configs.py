@@ -13,17 +13,18 @@ def get_configs(folder: str = 'configs/valid/') -> list[str]:
     Raises:
         NameError: If directory specified does not contain any .yaml files.
     """
+    path_to_configs = get_base_dir() / folder
 
-    file_regex = f"{folder}/*.yaml".replace("//", "/")
-    pathlist = get_base_dir().glob(file_regex)
-    pathlist_rel = [path.relative_to(get_base_dir()) for path in pathlist]
+    file_regex = f"*.yaml".replace("//", "/")
 
-    list_of_configs = [str(path) for path in pathlist_rel]
+    # for file name only without path to it
+    # configs = [file.name for file in path_to_configs.glob('*.yaml')]
 
-    if len(list_of_configs) == 0:
+    configs = list(path_to_configs.glob('*.yaml'))
+
+    if len(configs) == 0:
         logging.info(f"No configs in directory {folder}. Program exited.")
         raise FileNotFoundError(f"No configs in directory '{folder}'.")
 
-    # TODO: return list of config file names not the path with valid
-    print(list_of_configs)
-    return (list_of_configs)
+    return (configs)
+
