@@ -24,4 +24,6 @@ def get_configs(folder: str = 'configs/valid/') -> list[str]:
         logging.info(f"No configs in directory {folder}. Program exited.")
         raise FileNotFoundError(f"No configs in directory '{folder}'.")
 
+    # TODO: return list of config file names not the path with valid
+    print(list_of_configs)
     return (list_of_configs)
