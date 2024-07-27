@@ -1,12 +1,11 @@
-from scripts import MathChatBot
-from scripts import get_configs
-from scripts import instantiate_logger
+from scripts.MathChatBot import MathChatBot
+from scripts.get_configs import get_configs
+from scripts.instantiate_logger import instantiate_logger
 
-# TODO: whether to make specific imports across package
 
 if __name__ == "__main__":
 
-    instantiate_logger.instantiate_logger()
-    configs = get_configs.get_configs()
+    instantiate_logger()
+    configs = get_configs()
     for conf in configs:
-        MathChatBot.MathChatBot(config_path=conf)
+        MathChatBot(config_path=conf)
