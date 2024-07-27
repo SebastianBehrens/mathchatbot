@@ -1,4 +1,5 @@
 import unittest
+import logging
 import requests
 import urllib
 from pathlib import Path
@@ -14,7 +15,6 @@ class ExerciseTest(unittest.TestCase):
         with open(Path().cwd() / "exercises" / "exercises_general_levels.yaml",'r',encoding='utf8') as file:
                 content: dict = DefaultMunch.fromDict(yaml.safe_load(file))
         for topic in content.keys():
-            print("\n")
             for level in content[topic]:
                 exercise = content[topic][level]
                 self.assertEqual('foo'.upper(), 'FOO')
@@ -30,10 +30,10 @@ class ExerciseTest(unittest.TestCase):
                 url: str = f"https://latexonline.cc/compile?text={tex_str_enc}"
                 response: requests = requests.get(url = url, timeout = 5)
                 if response.status_code == 400:
-                    print(f"Topic: {topic}")
-                    print(f"Level: {level}")
-                    print(response.status_code)
-                    print(response.text)
+                    logging.error(f"Topic: {topic}")
+                    logging.error(f"Level: {level}")
+                    logging.error(response.status_code)
+                    logging.error(response.text)
                 self.assertNotEqual(response.status_code, 400)
 
 if __name__ == '__main__':
