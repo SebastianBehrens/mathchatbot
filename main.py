@@ -2,6 +2,7 @@ from scripts import MathChatBot
 from scripts import get_configs
 from scripts import instantiate_logger
 
+# TODO: whether to make specific imports across package
 
 if __name__ == "__main__":
 

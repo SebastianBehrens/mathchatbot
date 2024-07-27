@@ -15,3 +15,5 @@ templates/latex.pdf
 **/*untracked*.*
 **/*scratch*.*
 .python_packages
+configs/*
+.idea/

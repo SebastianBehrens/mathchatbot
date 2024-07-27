@@ -276,3 +276,10 @@ Gleichungen:
             vars:
                 q: positive
                 b: positive
+LineareFunktionen:
+        level0:
+            instruction: Was sind ist die generelle Gleichung einer linearen Funktion?
+        level1:
+          instruction: "Wie zeichnet man eine lineare Funktion ein? (Tipp: 2 Möglichkeiten)"
+          answer: A) Ersten Punkt einzeichnen (0, b), Zweiten Wert für x einsetzen und dann den Punkt (x, f(x)) einzeichnen. Einen Strich durch die Punkte ziehen. B) Ersten Punkt einzeichnen (0,b). Den nächsten Punkt einzeichnen bei (1, b+a).
+
