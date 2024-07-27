@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 from scripts.get_base_dir import get_base_dir
 
-def instantiate_logger() -> None:
+def instantiate_logger(level) -> None:
 
     suffix: str = str(datetime.datetime.now().strftime('%Y-%m-%d'))
     file_path: Path = get_base_dir() / "logs" / f"{suffix}.log"
@@ -20,7 +20,8 @@ def instantiate_logger() -> None:
     handlers = [file_handler, console_handler]
 
     logging.basicConfig(
-        level=logging.INFO,
+        level=level,
         handlers=handlers,
         format='%(asctime)s - %(levelname)s - %(message)s')
     logger = logging.getLogger("MathChatBot")
+    logger.setLevel(level)
