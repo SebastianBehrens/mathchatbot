@@ -5,7 +5,7 @@ from re import split
 import logging
 
 def instantiate_exercise(exercise) -> str:
-    
+
     def fill_param(hint) -> int:
         if hint == "any":
             digit = choice(

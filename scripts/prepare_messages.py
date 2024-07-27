@@ -2,13 +2,14 @@ import logging
 from scripts.yield_exercise_tex import yield_exercise_tex
 from scripts.tex_to_pdf import tex_to_pdf
 from datetime import datetime
+from pathlib import Path
 
-def prepare_messages(exercises: list, path: str, config: dict):
+def prepare_messages(exercises: list, run_path: Path, config: dict) -> list[dict]:
     """Prepare the messages by converting .tex into pdf.
 
     Args:
         exercises: List of exercises as returned by fetch_exercises().
-        path: String containing the daily runtime path as returned by initialize_folder_today().
+        run_path: String containing the daily runtime path as returned by initialize_folder_today().
         config: Configuration dictionary.
     """
 
@@ -20,7 +21,7 @@ def prepare_messages(exercises: list, path: str, config: dict):
                 topic=exercise.topic,
                 instruction=exercise.instruction,
                 math=exercise.math)
-        pdf_file = tex_to_pdf(tex, path, uid)
+        pdf_file = tex_to_pdf(tex, run_path, uid)
 
         messages_to_be_sent.append(
             {
